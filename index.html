@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/1aa3b3d4de.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Task</title>
+    <style>
+      #purple {
+        color: blueviolet;
+      }
+
+     
+
+      /* Bootstrap 4 text input with search icon */
+
+      .has-search .form-control {
+        padding-left: 2.375rem;
+      }
+
+      .has-search .form-control-feedback {
+        position: absolute;
+        z-index: 2;
+        display: block;
+        width: 2.375rem;
+        height: 2.375rem;
+        line-height: 2.375rem;
+        text-align: center;
+        pointer-events: none;
+        color: blueviolet;
+      }
+      /* rounder */
+      #mineborder{
+        border-radius: 20px;
+      }
+      #mineborder:hover{
+        background-color: blueviolet !important;
+        color: white !important;
+      }
+      #myicons:hover{
+        color: blueviolet;
+      }
+      #mybox{
+        background-color: white !important;
+        display: block;
+        width: 200px;
+        margin-left: -15px;
+        margin-top: 20px;
+        border-radius: 15px;
+        height: 30px;
+        padding-left: 15px;
+        margin-bottom: 10px;
+      }
+      #mypos{
+        position: absolute;
+        bottom: 10px;
+        width: 85%;
+      }
+      #mybb{
+        right: 10px;
+        position: absolute;
+        top: 18px;
+        color: blueviolet;
+      }
+      #box1{
+        display: none;
+      }
+      #box2{
+        display: none;
+      }
+      #box3{
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <a class="navbar-brand font-weight-bold" href="#" id="purple">COMPANY</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav m-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#" id="purple"
+              ><i class="fas fa-bars"></i
+            ></a>
+          </li>
+
+          <li class="nav-item active " id="rightborder">
+            <a class="nav-link" href="#">HOME <span class="ml-2 text-secondary">|</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active font-weight-bold" href="#" id="purple">MESSAGES</a>
+          </li>
+        </ul>
+        <div class="form-group has-search pt-2">
+          <span class="fa fa-search form-control-feedback"></span>
+          <input type="text" class="form-control" placeholder="Search something..." />
+        </div>
+
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            
+            <a class="nav-link" href="#"><i class="fas fa-bell mr-2" id="purple"></i>Notifications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Welcome, Admin! <i class="fas fa-caret-down" id="purple"></i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="">
+      <div class="row">
+        <div class="col-sm-1">
+          <section class="d-flex flex-column p-3 h-100" style="width: 90px; ">
+            <i class="fas fa-toolbox fa-2x m-2" id="myicons"></i>
+            <i class="fas fa-archive fa-2x m-2" id="myicons"></i>
+            <i class="fas fa-cog fa-2x m-2" id="myicons"></i>
+            <i class="fas fa-user-circle fa-2x m-2" id="myicons"></i>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <button type="button" class="btn btn-transparent" data-toggle="tooltip" data-placement="top" title="Logout Icon">
+              <i class="fas fa-sign-in-alt fa-2x m-2" ></i>
+            </button>
+            
+            
+          </section>
+        </div>
+        <div class="col-sm-2 bg-light border-right">
+          <div id="mybox">
+            <p id="mymessage">All Messages</p>
+          </div>
+          
+          <p>Completed</p>
+          <p>Saved</p>
+          <p>Deleted</p>
+        </div>
+        <div class="col-sm-4 bg-light border-right" >
+          <h3>Messages</h3>
+          <div class="dropdown show">
+            <a class="btn btn-transparent dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              All Chats
+            </a>
+          
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="#">Facebook</a>
+              <a class="dropdown-item" href="#">Instagram</a>
+              <a class="dropdown-item" href="#">Twitter</a>
+            </div>
+          </div>
+          
+          <div class="container">
+            <div class="row bg-white" id="mineborder" onclick="display1()">
+              <div class="col-sm-3 py-2">
+                <img src="building.jpg" alt="" width="50px" height="50px" style="border-radius:50%">
+              </div>
+              <div class="col-sm-5 py-2">
+                <div class="d-flex flex-column  ml-3 mr-3">
+                  <p style="font-weight: bold; font-size: 20px;">John Doe</p>
+                  <p>Hi I have a...</p>
+                </div> 
+              </div>
+              <div class="col-sm-4 py-2">
+                <div class="d-flex flex-column ml-5">
+                  <i class="fas fa-ellipsis-h ml-auto"></i>
+                  <br>
+                  <p class="mt-1">5 hrs ago</p>
+                </div> 
+              </div>
+            </div>
+            <div class="row bg-white mt-2" id="mineborder" onclick="display2()">
+              <div class="col-sm-3 py-2">
+                <img src="building.jpg" alt="" width="50px" height="50px" style="border-radius:50%">
+              </div>
+              <div class="col-sm-5 py-2">
+                <div class="d-flex flex-column  ml-3 mr-3">
+                  <p style="font-weight: bold; font-size: 20px;">John Doe</p>
+                  <p>Fine How are you?</p>
+                </div> 
+              </div>
+              <div class="col-sm-4 py-2">
+                <div class="d-flex flex-column ml-5">
+                  <i class="fas fa-ellipsis-h ml-auto"></i>
+                  <br>
+                  <p class="mt-1">5 hrs ago</p>
+                </div> 
+              </div>
+            </div>
+            <div class="row bg-white mt-2" id="mineborder" onclick="display3()">
+              <div class="col-sm-3 py-2">
+                <img src="building.jpg" alt="" width="50px" height="50px" style="border-radius:50%">
+              </div>
+              <div class="col-sm-5 py-2">
+                <div class="d-flex flex-column  ml-3 mr-3">
+                  <p style="font-weight: bold; font-size: 20px;">John Doe</p>
+                  <p>Good Morning What is..</p>
+                </div> 
+              </div>
+              <div class="col-sm-4 py-2">
+                <div class="d-flex flex-column ml-5">
+                  <i class="fas fa-ellipsis-h ml-auto"></i>
+                  <br>
+                  <p class="mt-1">5 hrs ago</p>
+                </div> 
+              </div>
+            </div>
+            
+          </div>
+          
+          
+        </div>
+        <div class="col-sm-5 bg-light">
+
+          <div class="container">
+            <div class="row bg-white mt-2 mr-2">
+              <div class="col-sm-2 ">
+                <img class="ml-3 mt-2" src="building.jpg" alt="" width="50px" height="50px" style="border-radius:50%">
+              </div>
+              <div class="col-sm-8">
+                
+                <div class="d-flex flex-column">
+                  <div class="mt-2">
+                    <p style="font-weight: bold; font-size: 20px;"><i class="fab fa-facebook text-primary" ></i> &nbsp;John Doe</p>
+                    <p>Online</p>
+                  </div>
+                  
+                </div>
+                
+              </div>
+              <div class="col-sm-2">
+                <i class="fas fa-ellipsis-v fa-3x ml-4 mt-3 text-secondary"></i>
+              </div>
+            </div>
+            <div class="container" id="box1">
+              <div class="row">
+                <div class="col-sm-10">
+                  <div class="d-flex flex-rows mt-4">
+                    <img class="mr-2 mt-4" src="building.jpg" alt="" width="50px" height="50px" style="border-radius:50%">
+                    <div>
+                      <p class="bg-white p-2">Hi I have a question regarding one of your products.</p>
+                      <p style="font-size: 10px;">Message sent 2:45pm</p>
+                    </div>
+                    
+                  </div>
+                 
+                </div>
+                <div class="col-sm-10 ml-auto">
+                  <div class="d-flex flex-rows mt-4">
+                    
+                    <div>
+                      <p class="bg-white p-2">Yes continue with your questions. You are Welcome</p>
+                      <p style="font-size: 10px;">Message sent 3:45pm</p>
+                    </div>
+                    <img class="mr-2 mt-4" src="building.jpg" alt="" width="50px" height="50px" style="border-radius:50%">
+                  </div>
+                 
+                </div>
+                
+                
+              </div>
+            </div>
+            
+            <div class="container" id="box2">
+              <div class="row">
+                <div class="col-sm-10">
+                  <div class="d-flex flex-rows mt-4">
+                    <img class="mr-2 mt-4" src="building.jpg" alt="" width="50px" height="50px" style="border-radius:50%">
+                    <div>
+                      <p class="bg-white p-2">Hi How are you.What are you doing</p>
+                      <p style="font-size: 10px;">Message sent 4:45pm</p>
+                    </div>
+                    
+                  </div>
+                 
+                </div>
+                <div class="col-sm-10 ml-auto">
+                  <div class="d-flex flex-rows mt-4">
+                    
+                    <div>
+                      <p class="bg-white p-2">Fine How are you? I am doing great What about you</p>
+                      <p style="font-size: 10px;">Message sent 7:45pm</p>
+                    </div>
+                    <img class="mr-2 mt-4" src="building.jpg" alt="" width="50px" height="50px" style="border-radius:50%">
+                  </div>
+                 
+                </div>
+                
+                
+              </div>
+            </div>
+            <div class="container" id="box3">
+              <div class="row">
+                <div class="col-sm-10">
+                  <div class="d-flex flex-rows mt-4">
+                    <img class="mr-2 mt-4" src="building.jpg" alt="" width="50px" height="50px" style="border-radius:50%">
+                    <div>
+                      <p class="bg-white p-2">Good Morning. Have a nice day</p>
+                      <p style="font-size: 10px;">Message sent 7:45am</p>
+                    </div>
+                    
+                  </div>
+                 
+                </div>
+                <div class="col-sm-10 ml-auto">
+                  <div class="d-flex flex-rows mt-4">
+                    
+                    <div>
+                      <p class="bg-white p-2">Good Morning What is your plan for today? I am working today</p>
+                      <p style="font-size: 10px;">Message sent 7:50am</p>
+                    </div>
+                    <img class="mr-2 mt-4" src="building.jpg" alt="" width="50px" height="50px" style="border-radius:50%">
+                  </div>
+                 
+                </div>
+                
+                
+              </div>
+            </div>
+            
+            
+            <div class="form-group has-search pt-2" id="mypos">
+              <span class="fas fa-plus-circle form-control-feedback"></span>
+              <input type="text" class="form-control" placeholder="Send a reply" />
+              <span class="fa fa-send" id="mybb"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      var displayval1=document.getElementById("box1").style.display;
+      var displayval2=document.getElementById("box2").style.display;
+      var displayval3=document.getElementById("box3").style.display;
+      
+      function display1(){
+        
+
+        if(displayval1=='block'){
+          document.getElementById("box1").style.display = "none";
+          document.getElementById("box2").style.display = "none";
+          document.getElementById("box3").style.display = "none";
+         
+        }
+        else{
+          document.getElementById("box1").style.display = "block";
+          document.getElementById("box2").style.display = "none";
+          document.getElementById("box3").style.display = "none";
+          
+        }
+      }
+      function display2(){
+        
+
+        if(displayval2=='block'){
+          document.getElementById("box2").style.display = "none";
+          document.getElementById("box1").style.display = "none";
+          document.getElementById("box3").style.display = "none";
+          
+        }
+        else{
+          document.getElementById("box2").style.display = "block";
+          document.getElementById("box1").style.display = "none";
+          document.getElementById("box3").style.display = "none";
+          
+        }
+      }
+      function display3(){
+        
+
+        if(displayval3=='block'){
+          document.getElementById("box3").style.display = "none";
+          document.getElementById("box2").style.display = "none";
+          document.getElementById("box1").style.display = "none";
+          
+        }
+        else{
+          document.getElementById("box3").style.display = "block";
+          document.getElementById("box2").style.display = "none";
+          document.getElementById("box1").style.display = "none";
+          
+        }
+      }
+      
+    </script>
+  </body>
+</html>
